@@ -21,9 +21,9 @@ const Nav = () => {
 
     const navLinks = <>
 
-        <li> <NavLink to='/'> Home </NavLink> </li>
-        <li> <NavLink to='/singIn'> SingIn </NavLink> </li>
-        <li> <NavLink to='/singUp'> SingUp </NavLink> </li>
+        <li> <NavLink className="text-base font-semibold text-sky-700 lg:text-white" to='/'> Home </NavLink> </li>
+        <li> <NavLink className="text-base font-semibold  text-sky-700 lg:text-white" to='/singIn'> SingIn </NavLink> </li>
+        <li> <NavLink className="text-base font-semibold text-sky-700 lg:text-white" to='/singUp'> SingUp </NavLink> </li>
 
 
     </>
