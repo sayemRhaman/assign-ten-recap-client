@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "img": "https://i.ibb.co/TtzTqCN/sundora-logo-one.jpg",
+      "name": "Fashion House",
+      "brand": "Sundora"
+    },
+    {
+      "id": 2,
+      "img": "https://i.ibb.co/Y8sr7Lf/yellow-paint.png",
+      "name": "Premium Fashion Brand",
+      "brand": "Yellow"
+    },
+    {
+      "id": 3,
+      "img": "https://i.ibb.co/Qj0GWzh/illiyeen-Tow-paint.png",
+      "name": "The High-End Retailer",
+      "brand": "Illiyeen"
+    },
+    {
+      "id": 4,
+      "img": "https://i.ibb.co/FJ5XhX7/Zara-Emblem-paint.png",
+      "name": "even faster fashion",
+      "brand": "Zara"
+    },
+    {
+      "id": 5,
+      "img": "https://i.ibb.co/j3qXhjr/nike-logo-paint.png",
+      "name": "Fashion Brand",
+      "brand": "Nike"
+    },
+    {
+      "id": 6,
+      "img": "https://i.ibb.co/xgyNNQr/artisan-logo-paint.png",
+      "name": "Ethical and Sustainable Fashion ",
+      "brand": "Artisan"
+    }
+  ]
