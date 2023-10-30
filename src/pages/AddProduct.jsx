@@ -1,9 +1,10 @@
+import Swal from "sweetalert2";
 import Footer from "./home/Footer";
 import Nav from "./home/Nav";
 
 
 const AddProduct = () => {
-     const handleAddProduct = event => {
+    const handleAddProduct = event => {
         event.preventDefault();
 
         const form = event.target;
@@ -18,7 +19,27 @@ const AddProduct = () => {
         const newProduct = { name, img, brand, type, price, rating, short_description };
         console.log(newProduct);
 
-     }
+        //send data to server
+        fetch('http://localhost:3000/products', {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(newProduct)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if(data.insertedId) {
+                    Swal.fire(
+                        'Success',
+                        'Product Added succesfully',
+                        'success'
+                      )
+                }
+            })
+
+    }
     return (
         <div>
             <Nav></Nav>
@@ -108,10 +129,10 @@ const AddProduct = () => {
                         </label>
                     </div>
 
-                    
+
                     <div className="form-control mt-8 md:w-full">
-                      
-                     <input type="submit" value="Add Product" className="bg-sky-600 text-white px-3 py-3 rounded-lg text-lg font-semibold" />
+
+                        <input type="submit" value="Add Product" className="bg-sky-600 text-white px-3 py-3 rounded-lg text-lg font-semibold" />
                     </div>
 
                 </form>
