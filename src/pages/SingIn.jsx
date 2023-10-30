@@ -3,11 +3,29 @@ import Footer from "./home/Footer";
 import Nav from "./home/Nav";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProviders";
+import { FcGoogle } from "react-icons/fc";
+import { GoogleAuthProvider, getAuth } from "firebase/auth";
+import app from "../firebase/Firebase.config";
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
 
 
 
 const SingIn = () => {
-    const { singIn } = useContext(AuthContext);
+    const { singIn, singInWithGoogle } = useContext(AuthContext);
+
+    
+    const handleGoogleSingIn = () => {
+        singInWithGoogle(auth, provider)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error => {
+            console.log('error', error.message)
+        })
+       
+    }
   
 
     const handleSingIn = e => {
@@ -39,8 +57,8 @@ const SingIn = () => {
             <h2 className="text-2xl text-center mb-8 font-bold text-sky-600"> Sing In</h2>
             <form onSubmit={handleSingIn} className="">
 
-                <div  className="border-2 border-sky-600 px-1 py-3 bg-white outline-none rounded-lg w-full flex justify-center items-center gap-2 text-lg font-semibold">
-                  
+                <div onClick={handleGoogleSingIn}  className="border-2 border-sky-600 px-1 py-3 bg-white outline-none rounded-lg w-full flex justify-center items-center gap-2 text-lg font-semibold">
+                 <FcGoogle className="text-3xl"></FcGoogle>
                   Sing In With Google
                 </div>
 

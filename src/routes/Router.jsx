@@ -3,12 +3,14 @@ import Root from "../layOut/Root";
 import Home from "../pages/home/Home";
 import SingIn from "../pages/SingIn";
 import Footer from "../pages/home/Footer";
-import SingUP from "../pages/SingUP";
+import SingUP from "../pages/SingUp";
 import BrandDetails from "../pages/BrandDetails";
+import AddProduct from "../pages/AddProduct";
+import PrivateRoute from "./PrivateRoute";
 
 
 
-const router = createBrowserRouter ([
+const router = createBrowserRouter([
     {
         path: '/',
         element: <Root></Root>,
@@ -19,9 +21,16 @@ const router = createBrowserRouter ([
                 loader: () => fetch('/Catagoris.json')
             },
             {
-              path: '/products/:brand',
-              element: <BrandDetails></BrandDetails>,
-              loader: ({params}) => fetch(`http://localhost:3000/products/${params.brand}`)
+                path: '/products/:brand',
+                element: <BrandDetails></BrandDetails>,
+                loader: ({ params }) => fetch(`http://localhost:3000/products/${params.brand}`)
+            },
+
+            {
+                path: '/addProduct',
+                element: <PrivateRoute>
+                    <AddProduct></AddProduct>
+                </PrivateRoute>
             },
 
             {

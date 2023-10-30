@@ -4,7 +4,7 @@ import slider3 from '../../assets/b-3.jpg';
 
 const Banner = () => {
     return (
-        <div className="carousel w-full h-[100vh]">
+        <div className="carousel w-full h-[90vh]">
         <div id="slide1" className="carousel-item relative w-full ">
             <img src={slider1} className="w-full object-cover " />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">

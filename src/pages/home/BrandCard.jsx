@@ -10,7 +10,7 @@ const BrandCard = ({ card }) => {
                 <div className="mx-auto">
 
 
-                    <div className="card w-60 h-72 bg-sky-50 shadow-xl">
+                    <div className="card  h-72 bg-sky-50 shadow-xl">
 
                         <figure><img className="w-full" src={img} alt="Shoes" /></figure>
                         <div className="card-body">

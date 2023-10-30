@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import userPic from '../../assets/user.png';
+import logo from '../../assets/sr_fashion-removebg-preview.png';
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 
@@ -22,8 +23,9 @@ const Nav = () => {
     const navLinks = <>
 
         <li> <NavLink className="text-base font-semibold text-sky-700 lg:text-white" to='/'> Home </NavLink> </li>
-        <li> <NavLink className="text-base font-semibold  text-sky-700 lg:text-white" to='/singIn'> SingIn </NavLink> </li>
-        <li> <NavLink className="text-base font-semibold text-sky-700 lg:text-white" to='/singUp'> SingUp </NavLink> </li>
+        <li> <NavLink className="text-base font-semibold text-sky-700 lg:text-white" to='/addProduct'> Add Product </NavLink> </li>
+        <li> <NavLink className="text-base font-semibold  text-sky-700 lg:text-white" to='/singIn'> Sing In </NavLink> </li>
+       
 
 
     </>
@@ -40,7 +42,11 @@ const Nav = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                <a className="btn btn-ghost normal-case text-xl flex justify-center items-center">
+                <img className="w-10" src={logo} alt="" />
+                 <h2 className="font-bold">SR <span className="text-2xl font-bold text-red-600">.</span> Brand</h2>
+                </a>
+                
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
