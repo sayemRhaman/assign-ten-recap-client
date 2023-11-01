@@ -25,9 +25,9 @@ const SingIn = () => {
                 navigate(location?.state ? location.state : '/');
             })
 
-        // .catch(error => {
-        //     console.log('error', error.message)
-        // })
+        .catch(error => {
+            console.log('error', error.message)
+        })
 
     }
 

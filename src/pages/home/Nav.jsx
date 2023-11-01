@@ -25,6 +25,7 @@ const Nav = () => {
         <li> <NavLink className="text-base font-semibold text-sky-700 lg:text-white" to='/'> Home </NavLink> </li>
         <li> <NavLink className="text-base font-semibold text-sky-700 lg:text-white" to='/addProduct'> Add Product </NavLink> </li>
         <li> <NavLink className="text-base font-semibold  text-sky-700 lg:text-white" to='/singIn'> Sing In </NavLink> </li>
+        <li> <NavLink className="text-base font-semibold  text-sky-700 lg:text-white" to='/myCart'> My Cart </NavLink> </li>
        
 
 
@@ -56,7 +57,9 @@ const Nav = () => {
             <div className="navbar-end">
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                     <div className="w-10 rounded-full">
-                        <img src={userPic} />
+                        {
+                            user ? <img src={userPic} /> : ''
+                        }
                     </div>
                 </label>
 

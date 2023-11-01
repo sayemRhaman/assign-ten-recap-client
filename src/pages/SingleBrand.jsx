@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 const SingleBrand = ({ brands }) => {
-  const { img, name, brand, type, price, rating } = brands;
+  const { _id, img, name, brand, type, price, rating } = brands;
 
 
 
@@ -29,14 +29,16 @@ const SingleBrand = ({ brands }) => {
           </div>
 
           <div className="flex justify-between">
-            <p className="text-lg font-medium text-gray-600">{price}</p>
-            <p className="text-lg font-medium text-gray-600">{rating}</p>
+            <p className="text-lg font-medium text-gray-600">Price: {price}</p>
+            <p className="text-lg font-medium text-gray-600">Rating: {rating}</p>
           </div>
-          <div className="flex gap-2">
-            <Link to='/productDetails'>
-              <button className="bg-sky-700 px-3 py-1 text-white rounded-md block w-full">Details</button>
+          <div className="flex  gap-2">
+            <Link className="bg-sky-700 px-3 py-1 text-white rounded-md text-center w-full" to={`/productDetails/${_id}`}>
+              <button className=" ">Details</button>
             </Link>
-            <button className="bg-sky-700 px-3 py-1 text-white rounded-md block w-full" >Update</button>
+            <Link className="bg-sky-700 px-3 py-1 text-white rounded-md w-full text-center" to={`/updateProduct/${_id}`}>
+              <button >Update</button>
+            </Link>
           </div>
         </div>
 

@@ -7,6 +7,10 @@ import SingUP from "../pages/SingUp";
 import BrandDetails from "../pages/BrandDetails";
 import AddProduct from "../pages/AddProduct";
 import PrivateRoute from "./PrivateRoute";
+import ProductDetails from "../pages/ProductDetails";
+import UpdateProduct from "../pages/UpdateProduct";
+import MyCart from "../pages/mycart/MyCart";
+
 
 
 
@@ -21,7 +25,7 @@ const router = createBrowserRouter([
                 loader: () => fetch('/Catagoris.json')
             },
             {
-                path: '/products/:brand',
+                path: '/brandDetails/:brand',
                 element: <BrandDetails></BrandDetails>,
                 loader: ({ params }) => fetch(`http://localhost:3000/products/${params.brand}`)
             },
@@ -31,6 +35,26 @@ const router = createBrowserRouter([
                 element: <PrivateRoute>
                     <AddProduct></AddProduct>
                 </PrivateRoute>
+            },
+
+            {
+                path: '/productDetails/:_id',
+                element: <PrivateRoute>
+                    <ProductDetails></ProductDetails>
+                </PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:3000/productDetails/${params._id}`)
+            },
+
+            {
+                path: '/updateProduct/:id',
+                element: <UpdateProduct></UpdateProduct>,
+                loader: ({ params }) => fetch(`http://localhost:3000/updateProduct/${params.id}`)
+            },
+
+            {
+                path: '/myCart',
+                element: <MyCart></MyCart>,
+               
             },
 
             {

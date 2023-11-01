@@ -17,9 +17,9 @@ const BrandDetails = () => {
             <div className=" bg-sky-100/70 ">
             <Adv></Adv>
 
-                <div className="px-8 py-4">
+                <div className="px-16 md:px-8 py-4">
                     <h2 className="text-center text-3xl font-bold py-8">Products Of {brand} </h2>
-                    <div className="grid grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                         {
 
                             brandDetails.map(brands => <SingleBrand

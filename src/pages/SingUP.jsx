@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
 import Footer from "./home/Footer";
 import Nav from "./home/Nav";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../providers/AuthProviders";
 
 
 const SingUP = () => {
 
     const { createUser, } = useContext(AuthContext);
+    const [registerError, setRegisterError] = useState('');
+    const [success, setSuccess] = useState('');
 
    const handleRegister = e => {
     e.preventDefault();
@@ -17,6 +19,16 @@ const SingUP = () => {
     const email = form.get('email');
     const password = form.get('password');
     console.log(name,email,password);
+
+    //reset error 
+    setRegisterError('');
+    setSuccess('');
+
+
+   if(!/^(?=.*[A-Za-z])(?=.*[\W_]).{6,}$/.test(password)){
+       setRegisterError('Password shoude have a capital latter, a spcial character and less then six character')
+       return
+   }
     
 
 //createUser 
@@ -26,6 +38,8 @@ const SingUP = () => {
     .then(result => {
         console.log(result.user);
         const user = { email, password, name };
+        setSuccess('User Created succesfully')
+        
         fetch('http://localhost:5300/user', {
             method: 'POST',
             headers: {
@@ -35,9 +49,12 @@ const SingUP = () => {
         })
         .then(res => res.json())
         .then(data => {
+            
+
             if(data.insertedId) {
                 console.log('user added data to the database');
             }
+            
          
         })
     })
@@ -46,6 +63,7 @@ const SingUP = () => {
 
     .catch(error => {
         console.error(error)
+        setRegisterError(error.message)
     })
    }
     
@@ -90,13 +108,13 @@ const SingUP = () => {
 
             </form>
 
-            {/* {
+            {
                 success &&  <p className="mt-4 text text-sky-600 text-center text-lg font-medium">{success}</p>
             }
 
             {
-                regError && <p className=" mt-4  text-red-700 text-center">{regError}</p>
-            } */}
+                registerError && <p className=" mt-4  text-red-700 text-center">{registerError}</p>
+            }
 
             <p className="mt-4 text-center text-base font-medium">Already have an account Please <Link className="text-lg text-sky-600" to='/singIn'>Sing In</Link></p>
         </div>
