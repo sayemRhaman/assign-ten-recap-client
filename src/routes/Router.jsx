@@ -47,14 +47,16 @@ const router = createBrowserRouter([
 
             {
                 path: '/updateProduct/:id',
-                element: <UpdateProduct></UpdateProduct>,
+                element: <PrivateRoute>
+                    <UpdateProduct></UpdateProduct>
+                </PrivateRoute>,
                 loader: ({ params }) => fetch(`https://server-recap-assignment-o7o58b7yt-sayem-rhamans-projects.vercel.app/updateProduct/${params.id}`)
             },
 
             {
                 path: '/myCart',
                 element: <MyCart></MyCart>,
-               
+
             },
 
             {

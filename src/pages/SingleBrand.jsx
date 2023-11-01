@@ -17,7 +17,7 @@ const SingleBrand = ({ brands }) => {
       <div className=" rounded-xl bg-base-100 shadow-xl h-[550px]">
 
         <figure>
-          <img className="h-[55vh] w-full object-fill rounded-t-xl" src={img} />
+          <img className="h-[50vh] md:h-[55vh] w-full object-fill rounded-t-xl" src={img} />
         </figure>
 
         <div className="p-5 space-y-3">

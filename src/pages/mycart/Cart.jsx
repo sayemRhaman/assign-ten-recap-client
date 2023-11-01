@@ -54,7 +54,7 @@ const Cart = ({ cart, carts, setCarts  }) => {
 
             <div className="flex justify-center h-[650px] ">
                 <div className="card bg-base-100 shadow-xl">
-                    <figure><img className="h-[65vh] w-full" src={img} /></figure>
+                    <figure><img className="h-[50vh] md:h-[65vh] w-full" src={img} /></figure>
                     <div className="card-body">
                         <h2 className="card-title">{name}</h2>
                         <p>{short_description}</p>
