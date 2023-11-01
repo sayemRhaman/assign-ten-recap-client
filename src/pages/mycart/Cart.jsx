@@ -2,7 +2,7 @@ import { PropTypes } from "prop-types";
 import Swal from "sweetalert2";
 
 
-const Cart = ({ cart, carts, setCarts }) => {
+const Cart = ({ cart, carts, setCarts  }) => {
     const { _id, img, name, short_description, brand, rating } = cart;
     // console.log(Cart);
 
