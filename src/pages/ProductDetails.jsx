@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 
 
 const ProductDetails = () => {
-    const { user } = useContext(AuthContext);
+    const { user} = useContext(AuthContext);
     const navigate = useNavigate();
     const productDetails = useLoaderData();
     const { img, name, short_description, brand, rating } = productDetails;
@@ -36,7 +36,7 @@ const ProductDetails = () => {
                         'You clicked the button!',
                         'success'
                     )
-
+                   
                     navigate('/myCart')
                 }
             })

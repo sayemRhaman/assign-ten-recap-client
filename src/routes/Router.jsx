@@ -27,7 +27,7 @@ const router = createBrowserRouter([
             {
                 path: '/brandDetails/:brand',
                 element: <BrandDetails></BrandDetails>,
-                loader: ({ params }) => fetch(`https://server-recap-assignment-o7o58b7yt-sayem-rhamans-projects.vercel.app/products/${params.brand}`)
+                loader: ({ params }) => fetch(`https://server-recap-assignment-c9aye7vjn-sayem-rhamans-projects.vercel.app/products/${params.brand}`)
             },
 
             {
@@ -42,7 +42,7 @@ const router = createBrowserRouter([
                 element: <PrivateRoute>
                     <ProductDetails></ProductDetails>
                 </PrivateRoute>,
-                loader: ({ params }) => fetch(`https://server-recap-assignment-o7o58b7yt-sayem-rhamans-projects.vercel.app/productDetails/${params._id}`)
+                loader: ({ params }) => fetch(`https://server-recap-assignment-c9aye7vjn-sayem-rhamans-projects.vercel.app/productDetails/${params._id}`)
             },
 
             {
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
                 element: <PrivateRoute>
                     <UpdateProduct></UpdateProduct>
                 </PrivateRoute>,
-                loader: ({ params }) => fetch(`https://server-recap-assignment-o7o58b7yt-sayem-rhamans-projects.vercel.app/updateProduct/${params.id}`)
+                loader: ({ params }) => fetch(`https://server-recap-assignment-c9aye7vjn-sayem-rhamans-projects.vercel.app/updateProduct/${params.id}`)
             },
 
             {

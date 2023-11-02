@@ -77,7 +77,9 @@ const Cart = ({ cart, carts, setCarts  }) => {
     );
 };
 Cart.propTypes = {
-    cart: PropTypes.object.isRequired
+    cart: PropTypes.object.isRequired,
+    carts: PropTypes.object.isRequired,
+    setCarts: PropTypes.object.isRequired,
 }
 
 export default Cart;
