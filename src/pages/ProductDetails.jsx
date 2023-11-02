@@ -19,7 +19,7 @@ const ProductDetails = () => {
         const CartProduct = { img, name, short_description, brand, rating, email: user.email };
         console.log(CartProduct);
 
-        fetch('https://server-recap-assignment-o7o58b7yt-sayem-rhamans-projects.vercel.app/addCart', {
+        fetch('https://server-recap-assignment-ten.vercel.app/addCart', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

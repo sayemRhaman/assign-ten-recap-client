@@ -22,7 +22,7 @@ const Cart = ({ cart, carts, setCarts  }) => {
             if (result.isConfirmed) {
 
                 console.log('delete confirmed');
-                fetch(`https://server-recap-assignment-o7o58b7yt-sayem-rhamans-projects.vercel.app/cartDelete/${_id}`, {
+                fetch(`https://server-recap-assignment-ten.vercel.app/cartDelete/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

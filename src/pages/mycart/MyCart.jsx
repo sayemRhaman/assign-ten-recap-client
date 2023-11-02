@@ -14,7 +14,7 @@ const MyCart = () => {
 
 
     useEffect(() => {
-        fetch(`https://server-recap-assignment-o7o58b7yt-sayem-rhamans-projects.vercel.app/addCart/${email}`)
+        fetch(`https://server-recap-assignment-ten.vercel.app/addCart/${email}`)
             .then(res => res.json())
             .then(data => {
 
